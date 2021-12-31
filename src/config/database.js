@@ -11,11 +11,11 @@ module.exports = {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE,
+  charset: "utf8mb4",
   dialectOptions: {
-    timezone: "America/Sao_Paulo",
+    timezone: "-03:00",
   },
-  timezone: "America/Sao_Paulo",
-
+  timezone: "-03:00",
   /* ALL */
   define: {
     timestamps: true,
