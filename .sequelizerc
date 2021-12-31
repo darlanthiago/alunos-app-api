@@ -1,8 +1,20 @@
-const { resolve } = require('path');
+const { resolve } = require("path");
 
 module.exports = {
-  config: resolve(__dirname, 'src', 'config', 'database.js'),
-  'models-path': resolve(__dirname, 'src', 'models'),
-  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
-  'seeders-path': resolve(__dirname, 'src', 'database','seeds'),
-}
+  config: resolve(__dirname, "src", "config", "database.js"),
+  "models-path": resolve(__dirname, "src", "models"),
+  "migrations-path": resolve(__dirname, "src", "database", "migrations"),
+  "seeders-path": resolve(__dirname, "src", "database", "seeds"),
+  production: {
+    use_env_variable: "DATABASE_URL",
+    dialect: "postgres",
+    protocol: "postgres",
+    ssl: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
+  },
+};
