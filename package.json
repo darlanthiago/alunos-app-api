@@ -5,9 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
-    "build": "sucrase ./src -d ./dist --transforms imports",
-    "start": "node dist/server.js",
-    "db:migrate": "sequelize db:migrate"
+    "build": "sequelize db:migrate --env production && sucrase ./src -d ./dist --transforms imports",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
