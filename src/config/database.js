@@ -24,15 +24,4 @@ module.exports = {
     createdAt: "created_at",
     updatedAt: "updated_at",
   },
-  production: {
-    dialect: process.env.DATABASE_DRIVER,
-    protocol: process.env.DATABASE_DRIVER,
-    ssl: true,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
-  },
 };
