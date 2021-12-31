@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   /* SQLite */
-  dialect: "mysql",
+  dialect: process.env.DATABASE_DRIVER,
   // storage: './db.sqlite',
 
   /* MySQL / MariaDB */
@@ -25,8 +25,8 @@ module.exports = {
     updatedAt: "updated_at",
   },
   production: {
-    dialect: "mysql",
-    protocol: "mysql",
+    dialect: process.env.DATABASE_DRIVER,
+    protocol: process.env.DATABASE_DRIVER,
     ssl: true,
     dialectOptions: {
       ssl: {
