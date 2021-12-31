@@ -1,8 +1,8 @@
-require('dotenv').config();
+require("dotenv").config();
 
 module.exports = {
   /* SQLite */
-  dialect: 'postgres',
+  dialect: "postgres",
   // storage: './db.sqlite',
 
   /* MySQL / MariaDB */
@@ -12,16 +12,28 @@ module.exports = {
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE,
   dialectOptions: {
-    timezone: 'America/Sao_Paulo',
+    timezone: "America/Sao_Paulo",
   },
-  timezone: 'America/Sao_Paulo',
+  timezone: "America/Sao_Paulo",
 
   /* ALL */
   define: {
     timestamps: true,
     underscored: true,
     underscoredAll: true,
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+  },
+  production: {
+    use_env_variable: "DATABASE_URL",
+    dialect: "postgres",
+    protocol: "postgres",
+    ssl: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
 };
